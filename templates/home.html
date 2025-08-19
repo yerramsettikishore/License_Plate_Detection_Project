@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Plate Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center; /* Ensures the content is centered horizontally */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            background-color: #fff;
+            padding: 40px 60px; /* Increased padding to make the box bigger */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        button:active {
+            background-color: #397d3a; /* Even darker on active */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to License Plate Detection</h1>
+    <div class="button-container">
+        <button onclick="location.href='/file_detection'">File Detection</button>
+        <button onclick="location.href='/live_detection'">Live Detection</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live License Plate Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #aaa;
+        }
+
+        img {
+            width: 80%;
+            max-width: 500px;
+            margin-top: 10px;
+        }
+
+        h2 {
+            color: #28a745;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Live License Plate Detection</h1>
+        <img src="{{ url_for('video_feed') }}" width="500px">
+
+        <h2>Extracted License Plate Number:</h2>
+        <p id="plate_text">Loading...</p>
+    </div>
+
+    <script>
+        setInterval(() => {
+            fetch('/get_plate_text')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("plate_text").innerText = data.plate_text;
+                });
+        }, 1000);
+    </script>
+</body>
+
+</html>
